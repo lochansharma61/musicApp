@@ -1,6 +1,13 @@
 # OSX
 #
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+.AppleDouble
+.LSOverride
 
 # Xcode
 #
@@ -20,26 +27,51 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-project.xcworkspace
 
 # Android/IntelliJ
 #
+.hprof
 build/
 .idea
 .gradle
 local.properties
 *.iml
 
+# Android Studio 3 in .gitignore file.
+.idea/caches
+.idea/modules.xml
+
+# Gradle files
+.gradle/
+build/
+
+#built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+
 # node.js
 #
 node_modules/
 npm-debug.log
 yarn-error.log
+package-lock.json # include if you are using npm - don't use both yarn and npm
+
 
 # BUCK
 buck-out/
 \.buckd/
 *.keystore
+!debug.keystore
 
 # fastlane
 #
@@ -57,3 +89,14 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+/ios/Podfile.lock
+/ios/Teco.xcodeproj/project.pbxproj
+
+# Log Files
+*.log
+
+# Android Studio Navigation editor temp files
+.navigation/
+yarn.lock
+package-lock.json
+.vscode
