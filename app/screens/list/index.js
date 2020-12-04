@@ -6,6 +6,7 @@ import { Icon, } from 'native-base';
 import { styles } from './styles'
 import { connect } from 'react-redux';
 import * as action from "./actions"
+import { Loader } from '../../components/loader';
 
 class Assignment extends Component {
 
@@ -13,7 +14,8 @@ class Assignment extends Component {
     super(props)
     this.state = {
       search:'',
-      listView: false
+      listView: false,
+      loader: false
     };
   }
 
@@ -54,8 +56,10 @@ class Assignment extends Component {
   }
 
   searchApiCall(){
+    this.setState({loader: true})
     this.props.list(this.state.search)
       .then((res) => {
+        this.setState({loader: false})
         console.log('PRODUCTS RES ', res);
       })
   }
@@ -105,6 +109,7 @@ class Assignment extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Loader color={'white'} show={this.state.loader} style={styles.loading}/>
         <View style={styles.commentView}>
           <TextInput placeholder="search…" placeholderTextColor={Colors.lightBlack} value={this.state.search} onChangeText={(text) => this._onSearchTextChange(text)} style={styles.commentInput}></TextInput>
           <TouchableOpacity onPress={()=>{this.searchApiCall()}}  >

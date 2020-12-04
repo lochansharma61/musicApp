@@ -125,6 +125,11 @@ export const styles = StyleSheet.create({
         fontSize: width * (15/375),
         color: 'white',
         marginLeft: width *  (25/375)
+    },
+    loading: {
+        position: 'absolute', 
+        alignSelf: 'center', 
+        marginTop: height * (200/667)
     }
 
 })
